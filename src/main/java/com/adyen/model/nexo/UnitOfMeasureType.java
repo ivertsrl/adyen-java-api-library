@@ -1,5 +1,6 @@
 package com.adyen.model.nexo;
 
+import com.adyen.model.checkout.details.VisaCheckoutDetails;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import javax.xml.bind.annotation.XmlEnum;
@@ -198,9 +199,18 @@ public enum UnitOfMeasureType {
      * @return the unit of measure type
      */
     public static UnitOfMeasureType fromValue(String v) {
-        return Arrays.stream(values()).
-                filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+//        return Arrays.stream(values()).
+//                filter(s -> s.value.equals(v)).
+//                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+
+        UnitOfMeasureType[] arr = values();
+        for (UnitOfMeasureType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
     }
 
 }

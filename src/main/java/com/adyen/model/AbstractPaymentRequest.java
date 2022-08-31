@@ -229,7 +229,7 @@ public abstract class AbstractPaymentRequest<T extends AbstractPaymentRequest<T>
      */
     public Map<String, String> getOrCreateAdditionalData() {
         if (this.getAdditionalData() == null) {
-            this.setAdditionalData(new HashMap<>());
+            this.setAdditionalData(new HashMap<String, String>());
         }
 
         return this.getAdditionalData();
@@ -1008,7 +1008,16 @@ public abstract class AbstractPaymentRequest<T extends AbstractPaymentRequest<T>
                 ApiConstants.AdditionalData.ENCRYPTED_EXPIRY_YEAR,
                 ApiConstants.AdditionalData.ENCRYPTED_SECURITY_CODE);
 
-        keys.stream().forEach(s -> nonSensitiveAdditionalData.computeIfPresent(s, (s1, s2) -> "***"));
+//        keys.stream().forEach(s -> nonSensitiveAdditionalData.computeIfPresent(s, (s1, s2) -> "***"));
+
+        for (String k : keys) {
+            for (String nk : nonSensitiveAdditionalData.keySet()) {
+                if (k.equals(nk)) {
+                    nonSensitiveAdditionalData.put(nk, "***");
+                    break;
+                }
+            }
+        }
 
         return nonSensitiveAdditionalData.toString();
     }
