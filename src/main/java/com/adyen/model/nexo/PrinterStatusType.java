@@ -84,9 +84,18 @@ public enum PrinterStatusType {
      * @return the printer status type
      */
     public static PrinterStatusType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
+
+        PrinterStatusType[] arr = values();
+        for (PrinterStatusType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
     }
 
 }

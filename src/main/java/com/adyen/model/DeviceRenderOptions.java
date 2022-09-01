@@ -70,9 +70,18 @@ public class DeviceRenderOptions {
         }
 
         public static SdkInterfaceEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            SdkInterfaceEnum[] arr = values();
+            for (SdkInterfaceEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<SdkInterfaceEnum> {
@@ -121,9 +130,18 @@ public class DeviceRenderOptions {
         }
 
         public static SdkUiTypeEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            SdkUiTypeEnum[] arr = values();
+            for (SdkUiTypeEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<SdkUiTypeEnum> {

@@ -161,9 +161,18 @@ public class Redirect {
         }
 
         public static MethodEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            MethodEnum[] arr = values();
+            for (MethodEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public String getValue() {

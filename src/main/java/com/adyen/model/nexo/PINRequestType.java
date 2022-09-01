@@ -70,9 +70,18 @@ public enum PINRequestType {
      * @return the pin request type
      */
     public static PINRequestType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
+
+        PINRequestType[] arr = values();
+        for (PINRequestType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
     }
 
 }

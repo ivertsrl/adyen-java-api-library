@@ -126,9 +126,18 @@ public class PaymentsResponse extends AbstractPaymentsResponse<PaymentsResponse>
         }
 
         public static ResultCodeEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            ResultCodeEnum[] arr = values();
+            for (ResultCodeEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public String getValue() {

@@ -78,9 +78,18 @@ public enum ReversalReasonType {
      * @return the reversal reason type
      */
     public static ReversalReasonType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
+
+        ReversalReasonType[] arr = values();
+        for (ReversalReasonType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
     }
 
 }

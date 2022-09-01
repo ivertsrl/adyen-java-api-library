@@ -164,9 +164,17 @@ public enum SaleCapabilitiesType {
      * @return the sale capabilities type
      */
     public static SaleCapabilitiesType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
-    }
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
 
+        SaleCapabilitiesType[] arr = values();
+        for (SaleCapabilitiesType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
+    }
 }

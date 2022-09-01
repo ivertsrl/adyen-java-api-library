@@ -66,9 +66,18 @@ public class ShopperInput {
         }
 
         public static BillingAddressEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            BillingAddressEnum[] arr = values();
+            for (BillingAddressEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<BillingAddressEnum> {
@@ -115,9 +124,18 @@ public class ShopperInput {
         }
 
         public static DeliveryAddressEnum fromValue(String text) {
-            return Arrays.stream(DeliveryAddressEnum.values()).
+            /*return Arrays.stream(DeliveryAddressEnum.values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            DeliveryAddressEnum[] arr = values();
+            for (DeliveryAddressEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<DeliveryAddressEnum> {
@@ -164,9 +182,18 @@ public class ShopperInput {
         }
 
         public static PersonalDetailsEnum fromValue(String text) {
-            return Arrays.stream(PersonalDetailsEnum.values()).
+            /*return Arrays.stream(PersonalDetailsEnum.values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            PersonalDetailsEnum[] arr = values();
+            for (PersonalDetailsEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<PersonalDetailsEnum> {

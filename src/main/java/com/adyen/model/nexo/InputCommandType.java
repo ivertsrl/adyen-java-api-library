@@ -118,9 +118,18 @@ public enum InputCommandType {
      * @return the input command type
      */
     public static InputCommandType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
+
+        InputCommandType[] arr = values();
+        for (InputCommandType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
     }
 
 }

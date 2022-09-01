@@ -98,9 +98,18 @@ public class CostEstimateRequest {
         }
 
         public static ShopperInteractionEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            ShopperInteractionEnum[] arr = values();
+            for (ShopperInteractionEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<ShopperInteractionEnum> {

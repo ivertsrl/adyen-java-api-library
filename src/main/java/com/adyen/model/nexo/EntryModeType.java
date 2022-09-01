@@ -130,9 +130,18 @@ public enum EntryModeType {
      * @return the entry mode type
      */
     public static EntryModeType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
+
+        EntryModeType[] arr = values();
+        for (EntryModeType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
     }
 
 }

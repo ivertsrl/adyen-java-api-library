@@ -88,9 +88,18 @@ public class CreateAccountHolderResponse {
         }
 
         public static LegalEntityEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            LegalEntityEnum[] arr = values();
+            for (LegalEntityEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<LegalEntityEnum> {

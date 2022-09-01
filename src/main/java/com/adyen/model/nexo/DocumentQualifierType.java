@@ -94,9 +94,18 @@ public enum DocumentQualifierType {
      * @return the document qualifier type
      */
     public static DocumentQualifierType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
+
+        DocumentQualifierType[] arr = values();
+        for (DocumentQualifierType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
     }
 
 }

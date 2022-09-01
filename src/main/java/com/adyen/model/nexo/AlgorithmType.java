@@ -1,5 +1,7 @@
 package com.adyen.model.nexo;
 
+import com.adyen.model.AccountInfo;
+
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
@@ -107,9 +109,17 @@ public enum AlgorithmType {
      * @return the algorithm type
      */
     public static AlgorithmType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
-    }
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
 
+        AlgorithmType[] arr = values();
+        for (AlgorithmType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
+    }
 }

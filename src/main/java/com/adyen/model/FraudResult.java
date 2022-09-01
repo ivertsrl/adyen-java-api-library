@@ -77,7 +77,14 @@ public class FraudResult {
      * @return results
      **/
     public List<FraudCheckResult> getFraudCheckResults() {
-        return results.stream().map(s -> s.getFraudCheckResult()).collect(Collectors.toList());
+        //return results.stream().map(s -> s.getFraudCheckResult()).collect(Collectors.toList());
+
+        List<FraudCheckResult> list = new ArrayList<>();
+        for (FraudCheckResultContainer result : results) {
+            list.add(result.getFraudCheckResult());
+        }
+
+        return list;
     }
 
     @Override

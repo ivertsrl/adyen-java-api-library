@@ -69,9 +69,18 @@ public class Recurring {
         }
 
         public static ContractEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            ContractEnum[] arr = values();
+            for (ContractEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<ContractEnum> {
@@ -125,9 +134,18 @@ public class Recurring {
         }
 
         public static TokenServiceEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            TokenServiceEnum[] arr = values();
+            for (TokenServiceEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<TokenServiceEnum> {

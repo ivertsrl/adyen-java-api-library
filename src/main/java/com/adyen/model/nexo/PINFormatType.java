@@ -78,9 +78,18 @@ public enum PINFormatType {
      * @return the pin format type
      */
     public static PINFormatType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
+
+        PINFormatType[] arr = values();
+        for (PINFormatType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        return null;
     }
 
 }

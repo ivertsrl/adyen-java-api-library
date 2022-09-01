@@ -35,6 +35,7 @@ import com.adyen.model.Split;
 import com.adyen.model.ThreeDS2RequestData;
 import com.adyen.model.ThreeDSecureData;
 import com.adyen.model.applicationinfo.ApplicationInfo;
+import com.adyen.model.checkout.PaymentSessionRequest;
 import com.adyen.model.recurring.Recurring;
 import com.adyen.serializer.DateSerializer;
 import com.adyen.serializer.DateTimeGMTSerializer;
@@ -136,9 +137,18 @@ public class PayoutRequest {
         }
 
         public static EntityTypeEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            EntityTypeEnum[] arr = values();
+            for (EntityTypeEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<EntityTypeEnum> {
@@ -219,9 +229,18 @@ public class PayoutRequest {
         }
 
         public static RecurringProcessingModelEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            RecurringProcessingModelEnum[] arr = values();
+            for (RecurringProcessingModelEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<RecurringProcessingModelEnum> {
@@ -286,9 +305,18 @@ public class PayoutRequest {
         }
 
         public static ShopperInteractionEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            ShopperInteractionEnum[] arr = values();
+            for (ShopperInteractionEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<ShopperInteractionEnum> {

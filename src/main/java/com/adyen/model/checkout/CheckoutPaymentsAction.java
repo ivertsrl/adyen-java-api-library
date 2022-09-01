@@ -21,6 +21,7 @@
 package com.adyen.model.checkout;
 
 import com.adyen.model.Amount;
+import com.adyen.model.nexo.AlgorithmType;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -170,9 +171,18 @@ public class CheckoutPaymentsAction {
         }
 
         public static CheckoutActionType fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            CheckoutActionType[] arr = values();
+            for (CheckoutActionType item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<CheckoutActionType> {

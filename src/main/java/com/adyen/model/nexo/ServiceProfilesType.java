@@ -124,9 +124,18 @@ public enum ServiceProfilesType {
      * @return the service profiles type
      */
     public static ServiceProfilesType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
+
+        ServiceProfilesType[] arr = values();
+        for (ServiceProfilesType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
     }
 
 }

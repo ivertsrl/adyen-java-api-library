@@ -149,9 +149,18 @@ public class Transaction {
         }
 
         public static TransactionStatusEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            TransactionStatusEnum[] arr = values();
+            for (TransactionStatusEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<TransactionStatusEnum> {

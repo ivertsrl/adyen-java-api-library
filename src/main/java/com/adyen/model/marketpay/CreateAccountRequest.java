@@ -86,9 +86,18 @@ public class CreateAccountRequest {
         }
 
         public static PayoutScheduleEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            PayoutScheduleEnum[] arr = values();
+            for (PayoutScheduleEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<PayoutScheduleEnum> {

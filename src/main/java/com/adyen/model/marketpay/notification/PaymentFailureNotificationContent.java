@@ -54,7 +54,11 @@ public class PaymentFailureNotificationContent {
             return errorFieldTypeList;
         }
 
-        errorFieldTypeContainers.stream().forEach(s -> errorFieldTypeList.add(s.getErrorFieldType()));
+        //errorFieldTypeContainers.stream().forEach(s -> errorFieldTypeList.add(s.getErrorFieldType()));
+
+        for (ErrorFieldTypeContainer item : errorFieldTypeContainers) {
+            errorFieldTypeList.add(item.getErrorFieldType());
+        }
 
         return errorFieldTypeList;
     }

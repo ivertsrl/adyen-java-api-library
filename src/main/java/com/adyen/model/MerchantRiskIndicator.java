@@ -75,9 +75,18 @@ public class MerchantRiskIndicator {
         }
 
         public static DeliveryAddressIndicatorEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            DeliveryAddressIndicatorEnum[] arr = values();
+            for (DeliveryAddressIndicatorEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<DeliveryAddressIndicatorEnum> {
@@ -128,9 +137,18 @@ public class MerchantRiskIndicator {
         }
 
         public static DeliveryTimeframeEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            DeliveryTimeframeEnum[] arr = values();
+            for (DeliveryTimeframeEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<DeliveryTimeframeEnum> {

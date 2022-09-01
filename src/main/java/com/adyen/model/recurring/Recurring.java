@@ -116,9 +116,18 @@ public class Recurring {
             return String.valueOf(value);
         }
         public static TokenServiceEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            TokenServiceEnum[] arr = values();
+            for (TokenServiceEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
         public static class Adapter extends TypeAdapter<TokenServiceEnum> {
             @Override

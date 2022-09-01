@@ -84,9 +84,18 @@ public class PayPalDetails implements PaymentMethodDetails {
         }
 
         public static SubtypeEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            SubtypeEnum[] arr = values();
+            for (SubtypeEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<SubtypeEnum> {

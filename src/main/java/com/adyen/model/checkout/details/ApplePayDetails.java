@@ -22,6 +22,7 @@
 package com.adyen.model.checkout.details;
 
 import com.adyen.model.checkout.PaymentMethodDetails;
+import com.adyen.model.nexo.AlgorithmType;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.adyen.util.MaskUtil;
 import com.google.gson.TypeAdapter;
@@ -76,9 +77,18 @@ public class ApplePayDetails implements PaymentMethodDetails {
         }
 
         public static FundingSourceEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            FundingSourceEnum[] arr = values();
+            for (FundingSourceEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<FundingSourceEnum> {

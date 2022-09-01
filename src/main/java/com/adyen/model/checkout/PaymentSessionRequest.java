@@ -20,18 +20,7 @@
  */
 package com.adyen.model.checkout;
 
-import com.adyen.model.AccountInfo;
-import com.adyen.model.Address;
-import com.adyen.model.Amount;
-import com.adyen.model.BankAccount;
-import com.adyen.model.BrowserInfo;
-import com.adyen.model.Card;
-import com.adyen.model.ForexQuote;
-import com.adyen.model.Installments;
-import com.adyen.model.MerchantRiskIndicator;
-import com.adyen.model.Name;
-import com.adyen.model.Split;
-import com.adyen.model.ThreeDS2RequestData;
+import com.adyen.model.*;
 import com.adyen.model.applicationinfo.ApplicationInfo;
 import com.adyen.model.recurring.Recurring;
 import com.adyen.serializer.DateSerializer;
@@ -124,9 +113,18 @@ public class PaymentSessionRequest {
         }
 
         public static ChannelEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            ChannelEnum[] arr = values();
+            for (ChannelEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<ChannelEnum> {
@@ -212,9 +210,18 @@ public class PaymentSessionRequest {
         }
 
         public static EntityTypeEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            EntityTypeEnum[] arr = values();
+            for (EntityTypeEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<EntityTypeEnum> {
@@ -304,9 +311,18 @@ public class PaymentSessionRequest {
         }
 
         public static RecurringProcessingModelEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            RecurringProcessingModelEnum[] arr = values();
+            for (RecurringProcessingModelEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<RecurringProcessingModelEnum> {
@@ -392,9 +408,18 @@ public class PaymentSessionRequest {
         }
 
         public static ShopperInteractionEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            ShopperInteractionEnum[] arr = values();
+            for (ShopperInteractionEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<ShopperInteractionEnum> {

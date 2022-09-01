@@ -148,7 +148,14 @@ public class RecurringDetailsResult {
      * @return RecurringDetails
      */
     public List<RecurringDetail> getRecurringDetails() {
-        return details.stream().map(s -> s.getRecurringDetail()).collect(Collectors.toList());
+        //return details.stream().map(s -> s.getRecurringDetail()).collect(Collectors.toList());
+
+        List<RecurringDetail> list = new ArrayList<>();
+        for (RecurringDetailContainer item : details) {
+            list.add(item.getRecurringDetail());
+        }
+
+        return list;
     }
 
     @Override

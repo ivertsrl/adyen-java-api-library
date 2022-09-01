@@ -69,9 +69,18 @@ public class AccountInfo {
         }
 
         public static AccountAgeIndicatorEnum fromValue(String text) {
-           return Arrays.stream(values()).
+           /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+           AccountAgeIndicatorEnum[] arr = values();
+           for (AccountAgeIndicatorEnum item: arr) {
+               if (item.value.equals(text)) {
+                   return item;
+               }
+           }
+
+           return null;
         }
 
         public static class Adapter extends TypeAdapter<AccountAgeIndicatorEnum> {
@@ -122,9 +131,18 @@ public class AccountInfo {
         }
 
         public static AccountChangeIndicatorEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            AccountChangeIndicatorEnum[] arr = values();
+            for (AccountChangeIndicatorEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<AccountChangeIndicatorEnum> {
@@ -174,9 +192,18 @@ public class AccountInfo {
         }
 
         public static AccountTypeEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            AccountTypeEnum[] arr = values();
+            for (AccountTypeEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<AccountTypeEnum> {
@@ -230,9 +257,18 @@ public class AccountInfo {
         }
 
         public static DeliveryAddressUsageIndicatorEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            DeliveryAddressUsageIndicatorEnum[] arr = values();
+            for (DeliveryAddressUsageIndicatorEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<DeliveryAddressUsageIndicatorEnum> {
@@ -290,9 +326,18 @@ public class AccountInfo {
         }
 
         public static PasswordChangeIndicatorEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            PasswordChangeIndicatorEnum[] arr = values();
+            for (PasswordChangeIndicatorEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<PasswordChangeIndicatorEnum> {
@@ -350,9 +395,18 @@ public class AccountInfo {
         }
 
         public static PaymentAccountIndicatorEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            PaymentAccountIndicatorEnum[] arr = values();
+            for (PaymentAccountIndicatorEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<PaymentAccountIndicatorEnum> {

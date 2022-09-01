@@ -68,9 +68,18 @@ public class ModelConfiguration {
         }
 
         public static CardHolderNameEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            CardHolderNameEnum[] arr = values();
+            for (CardHolderNameEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public static class Adapter extends TypeAdapter<CardHolderNameEnum> {

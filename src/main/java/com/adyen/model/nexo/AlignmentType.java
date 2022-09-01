@@ -68,9 +68,17 @@ public enum AlignmentType {
      * @return the alignment type
      */
     public static AlignmentType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
-    }
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
 
+        AlignmentType[] arr = values();
+        for (AlignmentType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
+    }
 }

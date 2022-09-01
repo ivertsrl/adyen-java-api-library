@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,7 +64,14 @@ public class NotificationRequest {
         if (this.notificationItemContainers == null) {
             return null;
         }
-        return notificationItemContainers.stream().map(s -> s.getNotificationItem()).collect(Collectors.toList());
+
+        List<NotificationRequestItem> list = new ArrayList<>();
+        for (NotificationRequestItemContainer item : this.notificationItemContainers) {
+            list.add(item.getNotificationItem());
+        }
+
+        //return notificationItemContainers.stream().map(s -> s.getNotificationItem()).collect(Collectors.toList());
+        return list;
     }
 
     @Override

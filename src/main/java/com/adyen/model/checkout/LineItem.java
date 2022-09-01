@@ -281,9 +281,18 @@ public class LineItem {
         }
 
         public static TaxCategoryEnum fromValue(String text) {
-            return Arrays.stream(values()).
+            /*return Arrays.stream(values()).
                     filter(s -> s.value.equals(text)).
-                    findFirst().orElse(null);
+                    findFirst().orElse(null);*/
+
+            TaxCategoryEnum[] arr = values();
+            for (TaxCategoryEnum item : arr) {
+                if (item.value.equals(text)) {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         public String getValue() {

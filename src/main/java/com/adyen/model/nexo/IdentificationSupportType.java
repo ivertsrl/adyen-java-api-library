@@ -78,9 +78,17 @@ public enum IdentificationSupportType {
      * @return the identification support type
      */
     public static IdentificationSupportType fromValue(String v) {
-        return Arrays.stream(values()).
+        /*return Arrays.stream(values()).
                 filter(s -> s.value.equals(v)).
-                findFirst().orElseThrow(() -> new IllegalArgumentException(v));
-    }
+                findFirst().orElseThrow(() -> new IllegalArgumentException(v));*/
 
+        IdentificationSupportType[] arr = values();
+        for (IdentificationSupportType item : arr) {
+            if (item.value.equals(v)) {
+                return item;
+            }
+        }
+
+        throw new IllegalArgumentException(v);
+    }
 }
