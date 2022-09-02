@@ -74,7 +74,7 @@ import java.io.IOException;
 public class PaymentMethodDetailsTypeAdapter implements TypeAdapterFactory {
 
     @Override
-    public TypeAdapter<PaymentMethodDetails> create(Gson gson, TypeToken type) {
+    public TypeAdapter<PaymentMethodDetails> create(final Gson gson, TypeToken type) {
 
         if (type.getRawType() != PaymentMethodDetails.class) {
             return null;

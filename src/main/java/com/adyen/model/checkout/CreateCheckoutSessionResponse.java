@@ -22,14 +22,12 @@
 
 package com.adyen.model.checkout;
 
-import java.util.Objects;
-
 import com.adyen.model.AccountInfo;
 import com.adyen.model.Address;
 import com.adyen.model.Amount;
-import com.adyen.model.applicationinfo.ApplicationInfo;
 import com.adyen.model.Name;
 import com.adyen.model.Split;
+import com.adyen.model.applicationinfo.ApplicationInfo;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -38,13 +36,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 
-import static com.adyen.util.Util.toIndentedString;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+
+import static com.adyen.util.Util.toIndentedString;
 
 /**
  * CreateCheckoutSessionResponse

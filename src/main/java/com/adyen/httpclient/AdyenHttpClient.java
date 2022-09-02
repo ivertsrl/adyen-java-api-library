@@ -46,6 +46,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLPeerUnverifiedException;
+import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import java.io.IOException;
@@ -61,12 +62,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static com.adyen.constants.ApiConstants.HttpMethod.POST;
-import static com.adyen.constants.ApiConstants.RequestProperty.ACCEPT_CHARSET;
-import static com.adyen.constants.ApiConstants.RequestProperty.API_KEY;
-import static com.adyen.constants.ApiConstants.RequestProperty.APPLICATION_JSON_TYPE;
-import static com.adyen.constants.ApiConstants.RequestProperty.CONTENT_TYPE;
-import static com.adyen.constants.ApiConstants.RequestProperty.IDEMPOTENCY_KEY;
-import static com.adyen.constants.ApiConstants.RequestProperty.USER_AGENT;
+import static com.adyen.constants.ApiConstants.RequestProperty.*;
 
 public class AdyenHttpClient implements ClientInterface {
 
@@ -253,18 +249,36 @@ public class AdyenHttpClient implements ClientInterface {
     }
 
     private HostnameVerifier createHostnameVerifier(final Environment environment) {
-        return (host, session) -> {
-            try {
-                if (session.getPeerCertificates() != null && session.getPeerCertificates().length > 0) {
-                    // Assume the first certificate is the leaf, since chain will be ordered, according to Java documentation:
-                    // https://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLSession.html#getPeerCertificates()
-                    X509Certificate certificate = (X509Certificate) session.getPeerCertificates()[0];
-                    return TerminalCommonNameValidator.validateCertificate(certificate, environment);
+//        return (host, session) -> {
+//            try {
+//                if (session.getPeerCertificates() != null && session.getPeerCertificates().length > 0) {
+//                    // Assume the first certificate is the leaf, since chain will be ordered, according to Java documentation:
+//                    // https://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLSession.html#getPeerCertificates()
+//                    X509Certificate certificate = (X509Certificate) session.getPeerCertificates()[0];
+//                    return TerminalCommonNameValidator.validateCertificate(certificate, environment);
+//                }
+//                return false;
+//            } catch (SSLPeerUnverifiedException e) {
+//                e.printStackTrace();
+//                return false;
+//            }
+//        };
+
+        return new HostnameVerifier() {
+            @Override
+            public boolean verify(String hostname, SSLSession session) {
+                try {
+                    if (session.getPeerCertificates() != null && session.getPeerCertificates().length > 0) {
+                        // Assume the first certificate is the leaf, since chain will be ordered, according to Java documentation:
+                        // https://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLSession.html#getPeerCertificates()
+                        X509Certificate certificate = (X509Certificate) session.getPeerCertificates()[0];
+                        return TerminalCommonNameValidator.validateCertificate(certificate, environment);
+                    }
+                    return false;
+                } catch (SSLPeerUnverifiedException e) {
+                    e.printStackTrace();
+                    return false;
                 }
-                return false;
-            } catch (SSLPeerUnverifiedException e) {
-                e.printStackTrace();
-                return false;
             }
         };
     }

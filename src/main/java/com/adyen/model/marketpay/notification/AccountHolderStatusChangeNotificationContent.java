@@ -21,13 +21,12 @@
 
 package com.adyen.model.marketpay.notification;
 
-import java.util.Objects;
-
 import com.adyen.model.marketpay.AccountHolderStatus;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static com.adyen.util.Util.toIndentedString;
 

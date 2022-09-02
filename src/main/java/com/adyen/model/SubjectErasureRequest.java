@@ -21,9 +21,9 @@
 
 package com.adyen.model;
 
-import java.util.Objects;
-
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Objects;
 
 /**
  * SubjectErasureRequest

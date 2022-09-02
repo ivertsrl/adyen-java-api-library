@@ -24,7 +24,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.Map;
 
-
 import static com.adyen.util.Util.toIndentedString;
 
 public class SubmitResponse {

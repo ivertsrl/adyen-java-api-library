@@ -20,7 +20,6 @@
  */
 package com.adyen.deserializer;
 
-import java.io.IOException;
 import com.adyen.model.checkout.PaymentMethodDetails;
 import com.adyen.model.checkout.details.AchDetails;
 import com.adyen.model.checkout.details.AfterpayDetails;
@@ -66,6 +65,8 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
+
+import java.io.IOException;
 
 public class PaymentMethodDetailsDeserializerJackson extends JsonDeserializer<PaymentMethodDetails> {
 

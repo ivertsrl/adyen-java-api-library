@@ -20,14 +20,14 @@
  */
 package com.adyen.model.checkout;
 
-import java.util.Objects;
-
-import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
 import com.adyen.model.Amount;
 import com.adyen.model.Split;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.v3.oas.annotations.media.Schema;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * CreatePaymentCaptureRequest

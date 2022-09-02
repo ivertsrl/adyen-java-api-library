@@ -20,10 +20,11 @@
  */
 package com.adyen.service.resource.modification;
 
-import java.util.Arrays;
 import com.adyen.Client;
 import com.adyen.Service;
 import com.adyen.service.Resource;
+
+import java.util.Arrays;
 
 public class Cancel extends Resource {
     public Cancel(Service service) {

@@ -22,6 +22,7 @@
 
 package com.adyen.model.checkout;
 
+import com.adyen.model.ThreeDSRequestData;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -29,7 +30,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import com.adyen.model.ThreeDSRequestData;
 
 import java.io.IOException;
 import java.util.Objects;

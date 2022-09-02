@@ -20,8 +20,7 @@
  */
 package com.adyen.model.storedvalue;
 
-import java.util.Objects;
-
+import com.adyen.model.Amount;
 import com.adyen.model.checkout.PaymentMethodDetails;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.gson.TypeAdapter;
@@ -31,8 +30,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
-
-import com.adyen.model.Amount;
+import java.util.Objects;
 
 /**
  * StoredValueIssueRequest

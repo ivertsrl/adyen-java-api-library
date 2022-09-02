@@ -22,6 +22,7 @@
 package com.adyen.model.checkout;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.util.Objects;
 
 public class Phone {

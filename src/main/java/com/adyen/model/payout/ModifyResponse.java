@@ -22,7 +22,6 @@ package com.adyen.model.payout;
 
 import com.google.gson.annotations.SerializedName;
 
-
 import static com.adyen.util.Util.toIndentedString;
 
 public class ModifyResponse {

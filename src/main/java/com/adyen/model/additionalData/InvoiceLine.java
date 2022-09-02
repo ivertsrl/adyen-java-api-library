@@ -22,7 +22,6 @@ package com.adyen.model.additionalData;
 
 import com.adyen.enums.VatCategory;
 
-
 import static com.adyen.util.Util.toIndentedString;
 
 

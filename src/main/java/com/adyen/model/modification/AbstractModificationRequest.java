@@ -33,7 +33,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-
 import static com.adyen.util.Util.toIndentedString;
 
 /**
@@ -241,7 +240,7 @@ public class AbstractModificationRequest<T extends AbstractModificationRequest<T
      */
     public Map<String, String> getOrCreateAdditionalData() {
         if (getAdditionalData() == null) {
-            setAdditionalData(new HashMap<>());
+            setAdditionalData(new HashMap<String, String>());
         }
 
         return getAdditionalData();

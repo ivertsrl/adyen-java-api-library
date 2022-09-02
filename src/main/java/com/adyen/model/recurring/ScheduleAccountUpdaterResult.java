@@ -20,10 +20,11 @@
  */
 package com.adyen.model.recurring;
 
-import java.util.Date;
-import java.util.Objects;
 import com.adyen.util.MaskUtil;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Date;
+import java.util.Objects;
 
 import static com.adyen.util.Util.toIndentedString;
 

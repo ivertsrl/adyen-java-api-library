@@ -19,8 +19,10 @@
  * See the LICENSE file for more info.
  */
 package com.adyen.model.checkout;
-import java.util.Objects;
+
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Objects;
 
 /**
  * CreatePaymentReversalRequest

@@ -30,10 +30,8 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-
 
 import static com.adyen.util.Util.toIndentedString;
 

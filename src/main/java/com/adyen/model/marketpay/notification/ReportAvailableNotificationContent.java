@@ -21,9 +21,9 @@
 
 package com.adyen.model.marketpay.notification;
 
-import java.util.Date;
-
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Date;
 
 public class ReportAvailableNotificationContent {
     @SerializedName("accountCode")

@@ -29,9 +29,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 
-import static com.adyen.model.terminal.security.NexoDerivedKey.NEXO_CIPHER_KEY_LENGTH;
-import static com.adyen.model.terminal.security.NexoDerivedKey.NEXO_HMAC_KEY_LENGTH;
-import static com.adyen.model.terminal.security.NexoDerivedKey.NEXO_IV_LENGTH;
+import static com.adyen.model.terminal.security.NexoDerivedKey.*;
 
 final class NexoDerivedKeyGenerator {
 

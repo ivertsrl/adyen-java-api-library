@@ -21,10 +21,10 @@
 
 package com.adyen.model.marketpay.notification;
 
-import java.util.List;
-
 import com.adyen.model.marketpay.Transaction;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class ScheduledRefundsNotificationContent {
     @SerializedName("accountHolderCode")

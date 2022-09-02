@@ -35,7 +35,6 @@ import com.adyen.model.Split;
 import com.adyen.model.ThreeDS2RequestData;
 import com.adyen.model.ThreeDSecureData;
 import com.adyen.model.applicationinfo.ApplicationInfo;
-import com.adyen.model.checkout.PaymentSessionRequest;
 import com.adyen.model.recurring.Recurring;
 import com.adyen.serializer.DateSerializer;
 import com.adyen.serializer.DateTimeGMTSerializer;
@@ -48,12 +47,10 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-
 
 import static com.adyen.util.Util.toIndentedString;
 

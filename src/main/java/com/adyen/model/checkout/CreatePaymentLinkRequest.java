@@ -20,9 +20,6 @@
  */
 package com.adyen.model.checkout;
 
-import java.util.Date;
-import java.util.Objects;
-
 import com.adyen.model.Address;
 import com.adyen.model.Amount;
 import com.adyen.model.Name;
@@ -39,9 +36,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 /**
  * CreatePaymentLinkRequest
  */

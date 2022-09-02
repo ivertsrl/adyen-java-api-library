@@ -21,12 +21,12 @@
 
 package com.adyen.model.hop;
 
+import com.adyen.model.marketpay.ErrorFieldType;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import com.adyen.model.marketpay.ErrorFieldType;
-import com.google.gson.annotations.SerializedName;
 
 /**
  * GetOnboardingUrlResponse

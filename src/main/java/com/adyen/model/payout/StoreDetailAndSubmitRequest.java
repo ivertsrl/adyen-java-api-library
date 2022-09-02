@@ -33,7 +33,6 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Date;
 import java.util.Map;
 
-
 import static com.adyen.util.Util.toIndentedString;
 
 /**

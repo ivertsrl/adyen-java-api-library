@@ -20,9 +20,10 @@
  */
 package com.adyen.service.exception;
 
+import com.adyen.model.ApiError;
+
 import java.util.List;
 import java.util.Map;
-import com.adyen.model.ApiError;
 
 /**
  * API Exception class

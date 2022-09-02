@@ -22,7 +22,6 @@ package com.adyen.model.hpp;
 
 import com.google.gson.annotations.SerializedName;
 
-
 import static com.adyen.util.Util.toIndentedString;
 
 public class Issuer {

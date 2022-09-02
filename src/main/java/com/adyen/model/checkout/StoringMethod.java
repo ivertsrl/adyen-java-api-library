@@ -21,6 +21,7 @@
 package com.adyen.model.checkout;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.util.Objects;
 
 import static com.adyen.util.Util.toIndentedString;

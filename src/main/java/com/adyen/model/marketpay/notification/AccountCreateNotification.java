@@ -21,11 +21,11 @@
 
 package com.adyen.model.marketpay.notification;
 
-import java.util.Date;
-import java.util.Objects;
-
 import com.adyen.model.marketpay.CreateAccountResponse;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Date;
+import java.util.Objects;
 
 import static com.adyen.util.Util.toIndentedString;
 
